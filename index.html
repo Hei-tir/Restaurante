@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ <style>
+    html{
+        scroll-behavior: smooth;
+    }
+body {
+    font-family: monospace;
+    margin: 0;
+    padding: 0;
+    background-color:   bisque;
+    color: #555;
+}
+
+header {
+    background-color: azure;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+}
+
+
+header h1 {
+    margin: 0;
+    font-size: 3.0em;
+    color:  chocolate; /* Cor de destaque */
+}
+
+header img {
+    width: 50px;
+    margin: 10px 0; 
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #555;
+    font-weight: bolder;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color:  chocolate;
+}
+
+main {
+    padding: 10px;
+}
+
+
+
+article div{
+    display: flex;
+    flex-direction: column; /* Garante que os itens fiquem em coluna */
+    align-items: center; /* Centraliza horizontalmente */
+    margin-bottom: 30px;
+}
+
+article div {
+    background-color: azure;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+article div img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do container */
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+article div h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #e44d26; /* Cor de destaque */
+}
+
+article div p {
+    width: 400px;
+    text-align: justify;
+    line-height: 1.6; /* Melhora a legibilidade do texto */
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.footer-section {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    margin-bottom: 10px;
+    color: #fff; /* Cor para os títulos do footer */
+}
+
+.footer-section a {
+    color: #fff;
+    margin-right: 10px;
+    font-size: 20px;
+    text-decoration: none; /* Remove sublinhado dos links */
+}
+
+.footer-section a:hover {
+    color: #e44d26;
+}
+
+.footer-bottom {
+    border-top: 1px solid #555;
+    padding-top: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    header img {
+        width: 80px;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    article div {
+        padding: 15px;
+    }
+
+    article div p {
+        width: 100%;
+    }
+    article div h3 {
+        font-size: 1.3em;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+}
+ </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Bocadinhas <img src="style/img/Logo.jpg" alt="logo"></h1>
+        </div>
+        <div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#Entradas">Entradas</a>
+                    </li>
+                    <li>
+                        <a href="#PratosPrincipal">Pratos Principais</a>
+                    </li>
+                    <li>
+                        <a href="#Sobremesas">Sobremesas</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <article id="Entradas">
+            <div>
+                <img src="style/img/empada.jpg" alt="Esmpadas">
+                <h3>Mini Empanadas Argentinas de Carne</h3>
+                <p>Viaje para a Argentina com as nossas Mini Empanadas de Carne. Deliciosas massas folhadas recheadas com carne moída temperada com especiarias argentinas, azeitonas picadas e ovo cozido. Assadas até ficarem douradas e irresistíveis!</p>
+                <p>R$10.00</p>
+            </div>
+            <div>
+                <img src="style/img/Croquetes de Carne com Aioli de Limão.jpg" alt="Croquetes">
+                <h3>Croquetes de Carne com Aioli de Limão</h3>
+                <p>Experimente os nossos Croquetes de Carne, uma explosão de sabor e textura.  Bolinhos de carne macia e temperada, empanados e fritos até ficarem dourados e crocantes.  Servidos com um delicioso aioli de limão para um toque cítrico e refrescante.</p>
+                <p>R$8.00</p>
+            </div>
+            <div>
+                <img src="style/img/Bruschetta Caprese.jpg" alt="Bruschetta">
+                <h3>Bruschetta Caprese</h3>
+                <p>Desfrute da simplicidade e frescor da nossa Bruschetta Caprese.  Fatias de pão italiano torrado, cobertas com tomates cereja frescos, mussarela de búfala cremosa, manjericão fresco e um fio de azeite extra virgem.   Uma explosão de sabores mediterrâneos em cada mordida!</p>
+                <p>R$12.00</p>
+            </div>
+        </article>
+        <article id="PratosPrincipal">
+            <div>
+                <img src="style/img/images.jpg" alt="Bolonhesa">
+                <h3>Bolonhesa</h3>
+                <p>Delicie-se com nosso autêntico Macarrão à Bolonhesa,  um clássico reconfortante com um toque especial. O molho à bolonhesa, rico e saboroso, é preparado com carne moída selecionada, legumes frescos e um blend de temperos que realça cada ingrediente. Servido sobre uma generosa porção de espaguete cozido "al dente", este prato é a pedida perfeita para um almoço ou jantar em família. Polvilhado com queijo parmesão ralado para finalizar, é pura nostalgia em cada garfada.</p>
+                <p>R$23.99</p>
+            </div>
+            <div>
+                <img src="style/img/Pf.jpg" alt="PratoFeito">
+                <h3>Prato feito</h3>
+                <p>Explore a riqueza de sabores do nosso Prato Feito, uma explosão de cores e aromas que celebram a culinária brasileira. Saboreie a combinação perfeita de arroz branco, feijão carioca, uma suculenta picanha preparada com temperos autênticos, salada fresca e batatas fritas para complementar a sua refeição. Um prato completo e nutritivo, ideal para quem busca uma experiência gastronômica genuinamente brasileira.</p>
+                <p>R$20.99</p>
+            </div>
+            <div>
+                <img src="style/img/strong on off.jpg" alt="Strogonoff">
+                <h3>Strogonoff</h3>
+                <p>Saboreie nosso delicioso Strogonoff de Frango, um clássico reconfortante com o toque especial da nossa cozinha. Cubos suculentos de frango macio, cozidos em um molho cremoso à base de creme de leite fresco, cogumelos selecionados e um toque de mostarda dijon, que garante um sabor irresistível. Servido com arroz branco soltinho e batata palha extra fina e crocante, é a pedida perfeita para um almoço ou jantar especial</p>
+                <p>R$23.50</p>
+            </div>
+        </article>
+        <article id="Sobremesas">
+            <div>
+                <img src="style/img/Tortadelimap.jpg" alt="TortadeLimao">
+                <h3>Torta de Limão</h3>
+                <p>Delicie-se com a nossa Torta de Limão, uma explosão cítrica que equilibra doçura e acidez em perfeita harmonia. Uma base crocante de biscoito amanteigado recebe um recheio cremoso e levemente azedo de limão siciliano, coberto por um suspiro dourado e macio. Uma sobremesa perfeita para refrescar o paladar e adoçar o seu dia.</p>
+                <p>R$15.99</p>
+            </div>
+            <div>
+                <img src="style/img/mousse de morango.jpg" alt="MoussedeMaracuja">
+                <h3>Mousse de Maracujá</h3>
+                <p>Refresque o seu paladar com a nossa Mousse de Maracujá, uma sobremesa leve e exótica que te transporta para os trópicos. A textura aerada e cremosa combina perfeitamente com o sabor doce e levemente ácido do maracujá fresco. Finalizada com sementes de maracujá para um toque crocante e visualmente atraente.</p>
+                <p>R$14.00</p>
+            </div>
+            <div>
+                <img src="style/img/boulodemolango.jpg" alt="BoulodeMolango">
+                <h3>Bolo de morango</h3>
+                <p>Saboreie o nosso Bolo de Morango, uma sinfonia de sabores e texturas que celebram a fruta da estação. Uma massa fofinha e úmida, recheada com creme delicado e morangos frescos fatiados, coberta por uma camada generosa de chantilly e morangos inteiros. Uma sobremesa perfeita para celebrar momentos especiais.
+                </p>
+                <p>R$20.00</p>
+            </div>
+        </article>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Bocadinhas Restaurante</h3>
+                <p>Um lugar para saborear momentos especiais com a melhor comida e companhia.</p>
+            </div>
+    
+            <div class="footer-section">
+                <h4>Informações de Contato</h4>
+                <p><strong>Endereço:</strong> Rua das Delícias, 123 - Centro</p>
+                <p><strong>Telefone:</strong> (XX) XXXX-XXXX</p>
+                <p><strong>Email:</strong> contato@bocadinhasrestaurante.com.br</p>
+            </div>
+    
+            <div class="footer-section">
+                <h4>Horário de Funcionamento</h4>
+                <p><strong>Segunda a Sexta:</strong> 11:00 - 15:00 / 18:00 - 23:00</p>
+                <p><strong>Sábado:</strong> 12:00 - 23:00</p>
+                <p><strong>Domingo:</strong> 12:00 - 22:00</p>
+            </div>
+    
+            <div class="footer-section">
+                <h4>Siga-nos</h4>
+                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>© 2023 Bocadinhas Restaurante. Todos os direitos reservados.  Desenvolvido por Bocadinhas Interprises</p>
+        </div>
+    </footer>
+</body>
+</html>
