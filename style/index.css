@@ -1,0 +1,179 @@
+html{
+    scroll-behavior: smooth;
+}
+body {
+font-family: monospace;
+margin: 0;
+padding: 0;
+background-color:   bisque;
+color: #555;
+}
+
+header {
+background-color: azure;
+padding: 20px;
+text-align: center;
+box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+display: flex;
+flex-direction: column;
+align-items: center; /* Centraliza horizontalmente */
+}
+
+
+header h1 {
+margin: 0;
+font-size: 3.0em;
+color:  chocolate; /* Cor de destaque */
+}
+
+header img {
+width: 50px;
+margin: 10px 0; 
+}
+
+nav ul {
+list-style: none;
+padding: 0;
+margin: 10px 0;
+}
+
+nav ul li {
+display: inline-block;
+margin: 0 15px;
+}
+
+nav a {
+text-decoration: none;
+color: #555;
+font-weight: bolder;
+transition: color 0.3s ease;
+}
+
+nav a:hover {
+color:  chocolate;
+}
+
+main {
+padding: 10px;
+}
+
+
+
+section div{
+display: flex;
+flex-direction: column; /* Garante que os itens fiquem em coluna */
+align-items: center; /* Centraliza horizontalmente */
+margin-bottom: 30px;
+}
+
+section div {
+background-color: azure;
+padding: 20px;
+border-radius: 5px;
+box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+margin-bottom: 25px;
+text-align: center;
+}
+
+section div img {
+max-width: 100%;
+height: auto;
+border-radius: 5px;
+margin-bottom: 10px;
+}
+
+section div h3 {
+font-size: 1.5em;
+margin: 10px 0;
+color: #e44d26;
+}
+
+section div p {
+width: 400px;
+text-align: justify;
+line-height: 1.6;
+font-size: 1.3em;
+}
+
+/* Footer */
+footer {
+background-color: #333;
+color: #fff;
+padding: 20px;
+text-align: center;
+}
+
+.footer-container {
+display: flex;
+justify-content: space-around;
+flex-wrap: wrap;
+margin-bottom: 15px;
+}
+
+.footer-section {
+margin-bottom: 15px;
+text-align: left;
+}
+
+.footer-section h3,
+.footer-section h4 {
+margin-bottom: 10px;
+color: #fff; /* Cor para os títulos do footer */
+}
+
+.footer-section a {
+color: #fff;
+margin-right: 10px;
+font-size: 20px;
+text-decoration: none; /* Remove sublinhado dos links */
+}
+
+.footer-section a:hover {
+color: #e44d26;
+}
+
+.footer-bottom {
+border-top: 1px solid #555;
+padding-top: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+header {
+    padding: 10px;
+}
+
+header h1 {
+    font-size: 3em;
+}
+header a{
+    font-size: 0.9em;
+}
+header img {
+    width: 1.3em;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+section div {
+    padding: 15px;
+}
+
+section div p {
+    width: 100%;
+}
+section div h3 {
+    font-size: 1.5em;
+}
+
+.footer-container {
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-section {
+    text-align: center;
+}
+}

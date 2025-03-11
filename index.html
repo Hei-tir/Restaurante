@@ -4,186 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style/index.css">
  <style>
-    html{
-        scroll-behavior: smooth;
-    }
-body {
-    font-family: monospace;
-    margin: 0;
-    padding: 0;
-    background-color:   bisque;
-    color: #555;
-}
 
-header {
-    background-color: azure;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centraliza horizontalmente */
-}
-
-
-header h1 {
-    margin: 0;
-    font-size: 3.0em;
-    color:  chocolate; /* Cor de destaque */
-}
-
-header img {
-    width: 50px;
-    margin: 10px 0; 
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0;
-}
-
-nav ul li {
-    display: inline-block;
-    margin: 0 15px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #555;
-    font-weight: bolder;
-    transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color:  chocolate;
-}
-
-main {
-    padding: 10px;
-}
-
-
-
-article div{
-    display: flex;
-    flex-direction: column; /* Garante que os itens fiquem em coluna */
-    align-items: center; /* Centraliza horizontalmente */
-    margin-bottom: 30px;
-}
-
-article div {
-    background-color: azure;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 25px;
-    text-align: center;
-}
-
-article div img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-article div h3 {
-    font-size: 1.5em;
-    margin: 10px 0;
-    color: #e44d26;
-}
-
-article div p {
-    width: 400px;
-    text-align: justify;
-    line-height: 1.6;
-    font-size: 1.3em;
-}
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-bottom: 15px;
-}
-
-.footer-section {
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-.footer-section h3,
-.footer-section h4 {
-    margin-bottom: 10px;
-    color: #fff; /* Cor para os títulos do footer */
-}
-
-.footer-section a {
-    color: #fff;
-    margin-right: 10px;
-    font-size: 20px;
-    text-decoration: none; /* Remove sublinhado dos links */
-}
-
-.footer-section a:hover {
-    color: #e44d26;
-}
-
-.footer-bottom {
-    border-top: 1px solid #555;
-    padding-top: 10px;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    header {
-        padding: 10px;
-    }
-
-    header h1 {
-        font-size: 3em;
-    }
-    header a{
-        font-size: 0.9em;
-    }
-    header img {
-        width: 1.3em;
-    }
-
-    nav ul li {
-        margin: 0 10px;
-    }
-
-    article div {
-        padding: 15px;
-    }
-
-    article div p {
-        width: 100%;
-    }
-    article div h3 {
-        font-size: 1.5em;
-    }
-
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .footer-section {
-        text-align: center;
-    }
-}
  </style>
 </head>
 <body>
@@ -206,7 +29,7 @@ footer {
             </nav>
     </header>
     <main>
-        <article >
+        <section >
             <section id="Entradas">
                 <div>
                     <img src="style/img/empada.jpg" alt="Esmpadas">
@@ -227,8 +50,8 @@ footer {
                     <p>R$12.00</p>
                 </div>
             </section>
-        </article>
-        <article>
+        </section>
+        <section>
             <section id="PratosPrincipal">
                 <div>
                     <img src="style/img/images.jpg" alt="Bolonhesa">
@@ -237,7 +60,7 @@ footer {
                     <p>R$23.99</p>
                 </div>
                 <div>
-                    <img src="style/img/Pf.jpg" alt="PratoFeito">
+                    <img src="style/img/Pf.jpg" width="350px" alt="PratoFeito">
                     <h3>Prato feito</h3>
                     <p>Explore a riqueza de sabores do nosso Prato Feito, uma explosão de cores e aromas que celebram a culinária brasileira. Saboreie a combinação perfeita de arroz branco, feijão carioca, uma suculenta picanha preparada com temperos autênticos, salada fresca e batatas fritas para complementar a sua refeição. Um prato completo e nutritivo, ideal para quem busca uma experiência gastronômica genuinamente brasileira.</p>
                     <p>R$20.99</p>
@@ -249,8 +72,8 @@ footer {
                     <p>R$23.50</p>
                 </div>
             </section>
-        </article>
-        <article>
+        </section>
+        <section>
             <section id="Sobremesas">
                 <div>
                     <img src="style/img/Tortadelimap.jpg" alt="TortadeLimao">
@@ -272,7 +95,7 @@ footer {
                     <p>R$20.00</p>
                 </div>
             </section>
-        </article>
+        </section>
     </main>
     <footer>
         <div class="footer-container">
