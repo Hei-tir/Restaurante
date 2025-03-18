@@ -138,7 +138,7 @@ padding-top: 10px;
 }
 
 /* Responsividade */
-@media (max-width: 768px) {
+@media  (max-width: 768px) {
 header {
     padding: 10px;
 }
@@ -165,7 +165,7 @@ section div p {
     width: 100%;
 }
 section div h3 {
-    font-size: 1em;
+    font-size: 1.5em;
 }
 
 .footer-container {
@@ -176,4 +176,12 @@ section div h3 {
 .footer-section {
     text-align: center;
 }
+}
+@media (max-width: 400px){
+    section div p {
+        display: none;
+    }
+    section div strong p{
+        display: block;
+    }
 }
