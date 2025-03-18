@@ -29,6 +29,7 @@ color:  chocolate; /* Cor de destaque */
 header img {
 width: 50px;
 margin: 10px 0; 
+border-radius: 1cap;
 }
 
 nav ul {
