@@ -1,203 +1,257 @@
-html{
+/* style/index.css */
+
+html {
     scroll-behavior: smooth;
 }
-h1{
+
+h1 {
     font-family: "Roboto Serif", serif;
 }
-h3{
+
+h3 {
     font-family: "Roboto Serif", serif;
 }
-p{
+
+p {
     font-family: "Roboto", sans-serif;
 }
-#descMobile{
+
+#descMobile {
     display: none;
+    /* valor nulo para o display da descrição mobile em desktops */
 }
+
 body {
-font-family: monospace;
-margin: 0;
-padding: 0;
-background-color:   bisque;
-color: #555;
+    /* Estilização para o body */
+    font-family: monospace;
+    /* Fonte textual definida */
+    margin: 0;
+    /* setando o valor da margem como nula*/
+    padding: 0;
+    /* valor do espaco entre o conteudo de um elemento do html*/
+    background-color: bisque;
+    /* definição da cor do background*/
+    color: #555;
+    /*definição da cor do texto*/
 }
 
 header {
-background-color: azure;
-padding: 20px;
-text-align: center;
-box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
-display: flex;
-flex-direction: column;
-align-items: center; /* Centraliza horizontalmente */
+    background-color: azure;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    /* Display do conteudo setado como flexivel*/
+    flex-direction: column;
+    /* Garante que os itens fiquem em coluna */
+    align-items: center;
+    /* Centraliza horizontalmente */
 }
 
 
 header h1 {
-margin: 0;
-font-size: 3.0em;
-color:  chocolate; /* Cor de destaque */
+    margin: 0;
+    font-size: 3.0em;
+    /*Tamanho da fonte*/
+    color: chocolate;
+    /* Cor de destaque */
 }
 
 header img {
-width: 50px;
-margin: 10px 0; 
-border-radius: 1cap;
+    width: 50px;
+    /*Comprimento do elemento*/
+    margin: 10px 0;
+    border-radius: 1cap;
+    /*raio da curvatura da borda*/
 }
 
 nav ul {
-list-style: none;
-padding: 0;
-margin: 10px 0;
+    list-style: none;
+    /*estilização da lista*/
+    padding: 0;
+    margin: 10px 0;
 }
 
 nav ul li {
-display: inline-block;
-margin: 0 15px;
+    display: inline-block;
+    /*alteração da forma do elemento*/
+    margin: 0 15px;
 }
 
 nav a {
-text-decoration: none;
-color: #555;
-font-weight: bolder;
-transition: color 0.3s ease;
+    text-decoration: none;
+    /*Alteração das caracteristicas da formatação do texto*/
+    color: #555;
+    font-weight: bolder;
+    /*definição da espessura da borda*/
+    transition: color 0.3s ease;
+    /*Animação de transição*/
 }
 
 nav a:hover {
-color:  chocolate;
+    color: chocolate;
 }
+
+/*Estilização do Main e seus conteúdos*/
 
 main {
-padding: 10px;
+    padding: 10px;
 }
 
-
-
-section div{
-display: flex;
-flex-direction: column; /* Garante que os itens fiquem em coluna */
-align-items: center; /* Centraliza horizontalmente */
-margin-bottom: 30px;
+/* Estilização do Section (container dos itens de cada categoria) */
+section {
+    display: flex; /* Use flexbox para alinhar os itens horizontalmente */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha em telas menores */
+    justify-content: space-around; /* Espaçamento entre os itens */
+    padding: 20px;
 }
 
-section div {
-background-color: azure;
-padding: 20px;
-border-radius: 5px;
-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
-margin-bottom: 25px;
-text-align: center;
+/* Estilização dos itens do menu (adicionado para controlar o layout dos itens injetados) */
+.menu-item {
+    background-color: azure;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+    text-align: center;
+    width: 800px; /* Defina uma largura para os itens */
 }
 
-section div img {
-max-width: 100%;
-height: auto;
-border-radius: 5px;
-margin-bottom: 10px;
+.menu-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
 
-section div h3 {
-font-size: 1.5em;
-margin: 10px 0;
-color: #e44d26;
+.menu-item h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #e44d26;
 }
 
-section div p {
-width: 400px;
-text-align: justify;
-line-height: 1.6;
-font-size: 1em;
+.menu-item p {
+    width: 100%;
+    text-align: justify;
+    line-height: 1.6;
+    font-size: 1em;
 }
 
 /* Footer */
 footer {
-background-color: #333;
-color: #fff;
-padding: 20px;
-text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    /*Alinhamento dos textos*/
+    /* Alinha o texto no centro*/
 }
 
 .footer-container {
-display: flex;
-justify-content: space-around;
-flex-wrap: wrap;
-margin-bottom: 15px;
+    display: flex;
+    justify-content: space-around;
+    /*alinha os itens flexíveis ao longo do eixo principal do container flexível*/
+    flex-wrap: wrap;
+    /*itens flexíveis devem ser forçados a ficar em uma única linha ou se podem ser "quebrados" para várias linhas*/
+    margin-bottom: 15px;
 }
 
 .footer-section {
-margin-bottom: 15px;
-text-align: left;
+    margin-bottom: 15px;
+    text-align: left;
 }
 
 .footer-section h3,
 .footer-section h4 {
-margin-bottom: 10px;
-color: #fff; /* Cor para os títulos do footer */
+    margin-bottom: 10px;
+    color: #fff;
+    /* Cor para os títulos do footer */
 }
 
 .footer-section a {
-color: #fff;
-margin-right: 10px;
-font-size: 20px;
-text-decoration: none; /* Remove sublinhado dos links */
+    color: #fff;
+    margin-right: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    /* Remove sublinhado dos links */
 }
 
 .footer-section a:hover {
-color: #e44d26;
+    color: #e44d26;
 }
 
 .footer-bottom {
-border-top: 1px solid #555;
-padding-top: 10px;
+    border-top: 1px solid #555;
+    padding-top: 10px;
 }
 
 /* Responsividade */
-@media  (max-width: 768px) {
-header {
-    padding: 1em;
+/* Responsividade - Estilos para telas menores que 768px (tablets) */
+@media (max-width: 768px) {
+    header {
+        padding: 1em;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    header a {
+        font-size: 0.8em;
+    }
+
+    header img {
+        width: 1.3em;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    section {
+        padding: 15px; /* Ajuste no padding da section para tablets */
+    }
+
+    .menu-item {
+        padding: 15px; /* Ajuste no padding do item do menu para tablets */
+        width: 45%; /* Ajuste na largura dos itens para tablets */
+    }
+
+    .menu-item p {
+        width: 100%;
+    }
+
+    .menu-item h3 {
+        font-size: 1.5em;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
 }
 
-header h1 {
-    font-size: 2em;
-}
-header a{
-    font-size: 0.8em;
-}
-header img {
-    width: 1.3em;
-}
-
-nav ul li {
-    margin: 0 10px;
-}
-
-section div {
-    padding: 15px;
-}
-
-section div p {
-    width: 100%;
-}
-section div h3 {
-    font-size: 1.5em;
-}
-
-.footer-container {
-    flex-direction: column;
-    align-items: center;
-}
-
-.footer-section {
-    text-align: center;
-}
-}
-@media (max-width: 400px){
-    section div p {
+/* Responsividade - Estilos para telas menores que 400px (Celulares) */
+@media (max-width: 400px) {
+    .menu-item p {
         display: none;
     }
-    section div strong p{
+
+    .menu-item strong p {
         display: block;
     }
-    #descMobile{
+
+    /* Aparecimento da descrição para mobile */
+    #descMobile {
         display: block;
+        /* Exibe a descrição resumida para mobile */
+    }
+
+    .menu-item {
+        width: 90%; /* Largura dos itens para celular */
     }
 }
