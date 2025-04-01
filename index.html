@@ -1,33 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bocadinhas Restaurante</title>
-    <link rel="stylesheet" href="style/index.css">
+    <title>Bocadinhas Restaurante - Cardápio</title>
+    <meta name="description" content="Confira nosso delicioso cardápio com entradas, pratos principais e sobremesas.">
+
+    <!-- Google Fonts (Exemplo: Roboto e Roboto Serif) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Barriecito&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,400;8..144,700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- Estilos CSS (Movemos para um arquivo externo chamado style/index.css) -->
-    <!-- <style> /* Removido para usar o arquivo style/index.css */ </style> -->
+    <!-- Font Awesome (Opcional, para ícones sociais) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Link para o CSS -->
+    <link rel="stylesheet" href="style/index.css">
 </head>
 <body>
-    <header>
-        <!-- Início do Cabeçalho -->
+    <header role="banner">
         <div>
-            <!-- Div que contém o nome e a logo do restaurante
-                a logo se encontra no caminho style/img/Logo.jpg
-            -->
-            <h1>Bocadinhas <img src="style/img/Logo.jpg" alt="logo"></h1>
+            <h1>Bocadinhas <img src="style/img/Logo.jpg" alt="Logotipo Bocadinhas Restaurante"></h1>
         </div>
-        <nav>
-            <!-- Nav é a barra de navegação
-                ela contém uma lista onde está presente as três categorias do cardápio
-            -->
+        <nav role="navigation" aria-label="Navegação Principal">
             <ul>
                 <li><a href="#Entradas">Entradas</a></li>
                 <li><a href="#PratosPrincipal">Pratos Principais</a></li>
@@ -35,34 +30,53 @@
             </ul>
         </nav>
     </header>
-    <main>
-        <!-- Início do conteúdo principal -->
-        <!-- Main: Contém as três seções (section) do cardápio -->
 
-        <section id="Entradas">
-            <!-- Section: Seção de Entradas.  Os itens serão adicionados aqui via JavaScript -->
-            <div id="entradas-container"></div>
+    <main role="main">
+        <!-- Seção de Entradas -->
+        <section id="Entradas" aria-labelledby="entradas-titulo">
+            <h2 id="entradas-titulo">Entradas</h2>
+            <div id="entradas-container" class="menu-category-container">
+                <!-- Itens de entrada serão injetados aqui pelo JavaScript -->
+                <p>Carregando entradas...</p> <!-- Mensagem de carregamento opcional -->
+            </div>
         </section>
 
-        <section id="PratosPrincipal">
-            <!-- Section: Seção de Pratos Principais. Os itens serão adicionados aqui via JavaScript -->
-            <div id="pratosprincipal-container"></div>
+        <!-- Seção de Pratos Principais -->
+        <section id="PratosPrincipal" aria-labelledby="pratos-titulo">
+            <h2 id="pratos-titulo">Pratos Principais</h2>
+            <div id="pratosprincipal-container" class="menu-category-container">
+                <!-- Itens de pratos principais serão injetados aqui pelo JavaScript -->
+                 <p>Carregando pratos principais...</p>
+            </div>
         </section>
 
-        <section id="Sobremesas">
-            <!-- Section: Seção de Sobremesas. Os itens serão adicionados aqui via JavaScript -->
-            <div id="sobremesas-container"></div>
+        <!-- Seção de Sobremesas -->
+        <section id="Sobremesas" aria-labelledby="sobremesas-titulo">
+            <h2 id="sobremesas-titulo">Sobremesas</h2>
+            <div id="sobremesas-container" class="menu-category-container">
+                <!-- Itens de sobremesas serão injetados aqui pelo JavaScript -->
+                 <p>Carregando sobremesas...</p>
+            </div>
         </section>
     </main>
-    <footer>
-        <!-- Início do Footer -->
-        <!-- O footer contém informações importantes sobre a empresa fictícia:
-            Nome do restaurante, Contato, Horário de funcionamento, Redes Sociais
-        -->
+
+    <!-- Carrinho de Compras -->
+    <aside id="carrinho" class="carrinho-container" role="region" aria-labelledby="carrinho-titulo">
+        <h2 id="carrinho-titulo">Meu Carrinho</h2>
+        <div id="cart-items-list" aria-live="polite">
+            <!-- Itens do carrinho serão injetados aqui -->
+            <p>Seu carrinho está vazio.</p>
+        </div>
+        <div class="cart-total">
+            <strong>Total: R$ <span id="cart-total-value">0,00</span></strong>
+        </div>
+        <button id="clear-cart-button" style="display: none;">Limpar Carrinho</button>
+         <!-- <button id="checkout-button">Finalizar Compra</button> -->
+    </aside>
+
+    <footer role="contentinfo">
         <div class="footer-container">
-            <!-- Class footer-container: cria um estilo para a div pai, o nome footer-container se refere à criação de um container para os conteúdos dentro do footer -->
             <div class="footer-section">
-                <!-- Class footer-section: cria uma estilização para as divs filhas, criando uma espécie de seção -->
                 <h3>Bocadinhas Restaurante</h3>
                 <p>Um lugar para saborear momentos especiais com a melhor comida e companhia.</p>
             </div>
@@ -83,17 +97,17 @@
 
             <div class="footer-section">
                 <h4>Siga-nos</h4>
-                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" aria-label="Visite nossa página no Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                <a href="#" target="_blank" aria-label="Visite nosso perfil no Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <!-- Footer-bottom: Última parte do footer, contém informações dos direitos -->
-            <p>© 2023 Bocadinhas Restaurante. Todos os direitos reservados.  Desenvolvido por Bocadinhas Interprises</p>
+            <p>© 2024 Bocadinhas Restaurante. Todos os direitos reservados. Desenvolvido por Bocadinhas Interprises</p>
         </div>
     </footer>
 
-    <script src="script.js"></script> <!-- Link para o seu arquivo JavaScript -->
+    <!-- Link para o JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>

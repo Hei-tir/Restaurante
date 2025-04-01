@@ -1,257 +1,453 @@
 /* style/index.css */
 
+/* --- Reset Básico e Configurações Gerais --- */
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Rolagem suave ao clicar em links internos */
+    box-sizing: border-box; /* Modelo de caixa mais intuitivo */
 }
 
-h1 {
-    font-family: "Roboto Serif", serif;
-}
-
-h3 {
-    font-family: "Roboto Serif", serif;
-}
-
-p {
-    font-family: "Roboto", sans-serif;
-}
-
-#descMobile {
-    display: none;
-    /* valor nulo para o display da descrição mobile em desktops */
+*, *:before, *:after {
+    box-sizing: inherit; /* Herda o box-sizing do html */
 }
 
 body {
-    /* Estilização para o body */
-    font-family: monospace;
-    /* Fonte textual definida */
+    font-family: "Roboto", sans-serif; /* Fonte principal */
     margin: 0;
-    /* setando o valor da margem como nula*/
     padding: 0;
-    /* valor do espaco entre o conteudo de um elemento do html*/
     background-color: bisque;
-    /* definição da cor do background*/
-    color: #555;
-    /*definição da cor do texto*/
+    color: #555; /* Cor de texto padrão */
+    line-height: 1.6; /* Espaçamento entre linhas padrão */
 }
 
+/* --- Tipografia --- */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Roboto Serif", serif; /* Fonte para títulos */
+    color: chocolate; /* Cor padrão para títulos (pode ser sobrescrita) */
+    margin-top: 0; /* Remove margem superior padrão */
+}
+
+h1 { font-size: 3.0em; }
+h2 { font-size: 1.8em; margin-bottom: 1em; border-bottom: 2px solid chocolate; padding-bottom: 0.3em; } /* Estilo para títulos de seção */
+h5 { font-size: 1.4em; color: #333; margin-bottom: 0.5em; } /* Estilo para nome do item no cardápio */
+p { margin-bottom: 1em; } /* Espaçamento padrão para parágrafos */
+
+/* --- Cabeçalho (Header) --- */
 header {
     background-color: azure;
-    padding: 20px;
+    padding: 15px 20px; /* Menos padding vertical */
     text-align: center;
-    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra mais sutil */
     display: flex;
-    /* Display do conteudo setado como flexivel*/
     flex-direction: column;
-    /* Garante que os itens fiquem em coluna */
     align-items: center;
-    /* Centraliza horizontalmente */
 }
-
 
 header h1 {
     margin: 0;
-    font-size: 3.0em;
-    /*Tamanho da fonte*/
-    color: chocolate;
-    /* Cor de destaque */
+    color: chocolate; /* Cor específica do H1 */
 }
 
 header img {
     width: 50px;
-    /*Comprimento do elemento*/
+    height: 50px; /* Garante proporção quadrada se a imagem não for */
+    object-fit: cover; /* Evita distorção da imagem */
     margin: 10px 0;
-    border-radius: 1cap;
-    /*raio da curvatura da borda*/
+    border-radius: 50%; /* Logo redonda fica mais elegante */
+    vertical-align: middle; /* Alinha melhor com o texto se estiver na mesma linha */
 }
 
+/* --- Navegação (Nav) --- */
 nav ul {
     list-style: none;
-    /*estilização da lista*/
     padding: 0;
-    margin: 10px 0;
+    margin: 10px 0 0 0; /* Remove margem inferior */
 }
 
 nav ul li {
     display: inline-block;
-    /*alteração da forma do elemento*/
     margin: 0 15px;
 }
 
 nav a {
     text-decoration: none;
-    /*Alteração das caracteristicas da formatação do texto*/
     color: #555;
-    font-weight: bolder;
-    /*definição da espessura da borda*/
+    font-weight: bold; /* Usar bold ao invés de bolder */
     transition: color 0.3s ease;
-    /*Animação de transição*/
 }
 
 nav a:hover {
     color: chocolate;
 }
 
-/*Estilização do Main e seus conteúdos*/
-
+/* --- Conteúdo Principal (Main) --- */
 main {
     padding: 10px;
+    max-width: 1200px; /* Limita a largura máxima para melhor leitura */
+    margin: 20px auto; /* Centraliza o conteúdo principal */
 }
 
-/* Estilização do Section (container dos itens de cada categoria) */
+/* --- Seções do Cardápio (Section) --- */
 section {
-    display: flex; /* Use flexbox para alinhar os itens horizontalmente */
-    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha em telas menores */
-    justify-content: space-around; /* Espaçamento entre os itens */
-    padding: 20px;
+    margin-bottom: 30px; /* Espaço entre as seções */
 }
 
-/* Estilização dos itens do menu (adicionado para controlar o layout dos itens injetados) */
+/* --- Container dos Itens (Ex: #entradas-container) --- */
+/* O layout flex agora vai aqui, dentro da section */
+#entradas-container,
+#pratosprincipal-container,
+#sobremesas-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Espaça uniformemente */
+    gap: 20px; /* Espaçamento moderno entre os itens */
+}
+
+/* --- Item Individual do Cardápio (.menu-item) --- */
 .menu-item {
     background-color: azure;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 25px;
+    border-radius: 8px; /* Um pouco mais suave */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 800px; /* Defina uma largura para os itens */
+    width: calc(33.333% - 20px); /* Tenta 3 colunas, ajusta pelo gap */
+    display: flex; /* Flex para alinhar conteúdo interno verticalmente */
+    flex-direction: column; /* Conteúdo empilhado */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Efeito suave no hover */
+}
+
+.menu-item:hover {
+    transform: translateY(-5px); /* Leve elevação no hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .menu-item img {
     max-width: 100%;
-    height: auto;
+    height: 200px; /* Altura fixa para uniformidade */
+    object-fit: cover; /* Garante que a imagem cubra sem distorcer */
     border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.menu-item h5 { /* Alvo correto para o nome do item gerado pelo JS */
+    font-size: 1.3em; /* Ajuste de tamanho */
+    margin-top: 0; /* Já definido em h5 geral */
     margin-bottom: 10px;
+    color: #e44d26; /* Cor específica do título do item */
+    flex-grow: 0; /* Não cresce */
 }
 
-.menu-item h3 {
-    font-size: 1.5em;
-    margin: 10px 0;
-    color: #e44d26;
-}
-
+/* Parágrafos dentro do item */
 .menu-item p {
-    width: 100%;
     text-align: justify;
-    line-height: 1.6;
-    font-size: 1em;
+    font-size: 0.95em; /* Levemente menor */
+    margin-bottom: 15px;
+    flex-grow: 1; /* Faz a descrição ocupar o espaço restante */
 }
 
-/* Footer */
+/* Descrições específicas (Desktop vs Mobile) */
+.descricao-mobile {
+    display: none; /* Escondido por padrão */
+}
+
+/* Preço e Botão */
+.menu-item .price {
+    font-weight: bold;
+    color: #008000; /* Verde para preço */
+    display: block; /* Ocupa a linha */
+    margin-bottom: 15px; /* Espaço antes do botão */
+    font-size: 1.1em;
+    flex-grow: 0; /* Não cresce */
+}
+
+.buy-button {
+    background-color: #ff8c00; /* Laranja */
+    color: white;
+    border: none;
+    padding: 10px 18px; /* Botão um pouco maior */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.9em; /* Fonte do botão */
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    align-self: center; /* Centraliza o botão no container flex */
+    margin-top: auto; /* Empurra o botão para baixo se houver espaço extra */
+}
+
+.buy-button:hover {
+    background-color: #e07b00; /* Laranja mais escuro */
+    transform: scale(1.03); /* Leve aumento no hover */
+}
+.buy-button:active {
+    transform: scale(0.98); /* Efeito de clique */
+}
+.buy-button:disabled { /* Estilo para botão desabilitado (ex: após adicionar) */
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+
+/* --- Rodapé (Footer) --- */
 footer {
     background-color: #333;
     color: #fff;
-    padding: 20px;
+    padding: 30px 20px; /* Mais padding */
     text-align: center;
-    /*Alinhamento dos textos*/
-    /* Alinha o texto no centro*/
+    margin-top: 40px; /* Espaço acima do footer */
 }
 
 .footer-container {
     display: flex;
     justify-content: space-around;
-    /*alinha os itens flexíveis ao longo do eixo principal do container flexível*/
     flex-wrap: wrap;
-    /*itens flexíveis devem ser forçados a ficar em uma única linha ou se podem ser "quebrados" para várias linhas*/
-    margin-bottom: 15px;
+    gap: 20px; /* Espaçamento entre seções do footer */
+    max-width: 1200px;
+    margin: 0 auto 20px auto; /* Centraliza e adiciona margem inferior */
+    text-align: left; /* Alinha texto à esquerda dentro das seções */
 }
 
 .footer-section {
-    margin-bottom: 15px;
-    text-align: left;
+    flex: 1; /* Tenta ocupar espaço igual */
+    min-width: 200px; /* Largura mínima antes de quebrar */
 }
 
 .footer-section h3,
 .footer-section h4 {
-    margin-bottom: 10px;
-    color: #fff;
-    /* Cor para os títulos do footer */
+    margin-bottom: 15px;
+    color: #ff8c00; /* Cor de destaque para títulos do footer */
+    font-size: 1.1em;
 }
-
+.footer-section p {
+    margin-bottom: 8px;
+    font-size: 0.9em;
+    color: #ccc; /* Cor mais suave para texto */
+}
 .footer-section a {
-    color: #fff;
+    color: #ccc;
     margin-right: 10px;
-    font-size: 20px;
+    font-size: 20px; /* Tamanho dos ícones */
     text-decoration: none;
-    /* Remove sublinhado dos links */
+    transition: color 0.3s ease;
 }
 
 .footer-section a:hover {
-    color: #e44d26;
+    color: #ff8c00; /* Cor de destaque no hover */
 }
 
 .footer-bottom {
     border-top: 1px solid #555;
-    padding-top: 10px;
+    padding-top: 15px;
+    margin-top: 20px;
+    font-size: 0.8em;
+    color: #aaa;
 }
 
-/* Responsividade */
-/* Responsividade - Estilos para telas menores que 768px (tablets) */
-@media (max-width: 768px) {
-    header {
-        padding: 1em;
-    }
+/* --- Estilos do Carrinho --- */
+.carrinho-container {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 30px auto; /* Espaçamento e centralização */
+    max-width: 900px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
 
-    header h1 {
-        font-size: 2em;
-    }
+.carrinho-container h2 {
+    margin-top: 0;
+    color: #333;
+    border-bottom: 2px solid #ff8c00;
+    padding-bottom: 10px;
+    margin-bottom: 20px; /* Mais espaço após título */
+}
 
-    header a {
-        font-size: 0.8em;
-    }
+#cart-items-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
-    header img {
-        width: 1.3em;
-    }
+#cart-items-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5px; /* Mais padding vertical */
+    border-bottom: 1px dashed #eee;
+    font-size: 0.95em; /* Ajuste de fonte */
+}
+#cart-items-list li:last-child {
+    border-bottom: none;
+}
+#cart-items-list li span:first-child { /* Nome e quantidade */
+    flex-grow: 1; /* Ocupa mais espaço */
+    margin-right: 10px;
+}
+#cart-items-list li span:last-child { /* Preço e botão remover */
+    white-space: nowrap; /* Evita quebra de linha */
+    color: #333;
+    font-weight: bold;
+}
 
-    nav ul li {
-        margin: 0 10px;
-    }
 
-    section {
-        padding: 15px; /* Ajuste no padding da section para tablets */
-    }
+/* Botão remover item do carrinho */
+.remove-item-button {
+    background-color: #e74c3c; /* Vermelho */
+    color: white;
+    border: none;
+    padding: 3px 8px;
+    font-size: 12px;
+    border-radius: 50%; /* Botão redondo */
+    cursor: pointer;
+    margin-left: 15px; /* Mais espaço */
+    line-height: 1; /* Ajuste para alinhamento do 'x' */
+    transition: background-color 0.3s ease;
+}
+.remove-item-button:hover {
+    background-color: #c0392b; /* Vermelho mais escuro */
+}
 
+/* Total do carrinho */
+.cart-total {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #ccc;
+    text-align: right;
+    font-size: 1.2em; /* Maior */
+    font-weight: bold;
+    color: #333;
+}
+
+/* Botão Limpar Carrinho */
+#clear-cart-button {
+    background-color: #aaa;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px; /* Mais espaço acima */
+    display: block; /* Ocupa a linha */
+    width: fit-content; /* Largura baseada no conteúdo */
+    margin-left: auto; /* Alinha à direita */
+    margin-right: 0;
+    font-size: 0.85em;
+    transition: background-color 0.3s ease;
+}
+#clear-cart-button:hover {
+    background-color: #888;
+}
+
+/* Esconde botão Limpar quando display:none é aplicado via JS */
+#clear-cart-button[style*="display: none;"] {
+    display: none !important;
+}
+
+
+/* --- Responsividade --- */
+
+/* Telas Médias (Tablets, ~769px a 1024px) */
+@media (max-width: 1024px) {
     .menu-item {
-        padding: 15px; /* Ajuste no padding do item do menu para tablets */
-        width: 45%; /* Ajuste na largura dos itens para tablets */
+        width: calc(50% - 15px); /* 2 colunas */
     }
-
-    .menu-item p {
-        width: 100%;
-    }
-
-    .menu-item h3 {
-        font-size: 1.5em;
-    }
-
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .footer-section {
+    .footer-container{
         text-align: center;
     }
 }
 
-/* Responsividade - Estilos para telas menores que 400px (Celulares) */
-@media (max-width: 400px) {
-    .menu-item p {
-        display: none;
-    }
 
-    .menu-item strong p {
-        display: block;
-    }
+/* Telas Pequenas (Tablets em modo retrato, celulares grandes, até 768px) */
+@media (max-width: 768px) {
+    header h1 { font-size: 2em; }
+    nav ul li { margin: 0 10px; }
+    main { padding: 5px; margin: 15px auto; }
 
-    /* Aparecimento da descrição para mobile */
-    #descMobile {
-        display: block;
-        /* Exibe a descrição resumida para mobile */
+    #entradas-container,
+    #pratosprincipal-container,
+    #sobremesas-container {
+        gap: 15px; /* Menos espaço entre itens */
     }
 
     .menu-item {
-        width: 90%; /* Largura dos itens para celular */
+        width: calc(50% - 10px); /* Ainda tenta 2 colunas, menos gap */
+        padding: 15px;
     }
+
+    .menu-item h5 { font-size: 1.2em; }
+    .menu-item p { font-size: 0.9em; }
+    .menu-item .price { font-size: 1em; }
+    .buy-button { padding: 8px 12px; font-size: 0.85em; }
+
+    .footer-container {
+        flex-direction: column; /* Empilha seções */
+        align-items: center; /* Centraliza */
+        text-align: center; /* Centraliza texto dentro das seções */
+    }
+    .footer-section {
+        width: 80%; /* Limita largura no centro */
+        margin-bottom: 20px;
+    }
+    .carrinho-container {
+        max-width: 95%; /* Usa quase toda a largura */
+        padding: 15px;
+    }
+    #cart-items-list li { font-size: 0.9em; }
+    .cart-total { font-size: 1.1em; }
+}
+
+
+/* Telas Muito Pequenas (Celulares, até 480px) */
+@media (max-width: 480px) {
+    header { padding: 10px; }
+    header h1 { font-size: 1.8em; }
+    nav ul li { margin: 0 5px; font-size: 0.9em; } /* Menor margem e fonte na nav */
+
+    #entradas-container,
+    #pratosprincipal-container,
+    #sobremesas-container {
+        gap: 10px;
+    }
+
+    .menu-item {
+        width: 95%; /* 1 coluna */
+        padding: 12px;
+    }
+
+    .menu-item img {
+        height: 150px; /* Imagem menor */
+        margin-bottom: 10px;
+    }
+    .menu-item h5 { font-size: 1.1em; margin-bottom: 8px; }
+    .menu-item p { font-size: 0.85em; margin-bottom: 10px; }
+    .menu-item .price { font-size: 1em; margin-bottom: 10px; }
+    .buy-button { width: 80%; padding: 10px 0; } /* Botão maior e centralizado */
+
+    /* Lógica de Descrição para Mobile */
+    .descricao-desktop {
+        display: none; /* Esconde a descrição longa */
+    }
+    .descricao-mobile {
+        display: block; /* Mostra a descrição curta */
+        font-size: 0.85em;
+        text-align: center; /* Centraliza a descrição curta */
+        margin-bottom: 10px;
+    }
+
+    #cart-items-list li {
+        flex-direction: column; /* Empilha info do item no carrinho */
+        align-items: flex-start; /* Alinha à esquerda */
+        gap: 5px; /* Espaço entre nome e preço/botão */
+    }
+    #cart-items-list li span:last-child { /* Preço e botão */
+        width: 100%; /* Ocupa toda a largura */
+        display: flex;
+        justify-content: space-between; /* Espaça preço do botão */
+        align-items: center;
+    }
+    .remove-item-button { margin-left: 0; } /* Remove margem esquerda desnecessária */
+
+    .cart-total { text-align: center; } /* Centraliza total */
+    #clear-cart-button { width: 60%; margin: 15px auto 0 auto; } /* Centraliza botão Limpar */
 }
